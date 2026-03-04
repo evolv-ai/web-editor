@@ -1,0 +1,17 @@
+---
+description: Commit message format for web-editor
+alwaysApply: true
+---
+
+When generating a commit, the format should be:
+
+```
+CHANGE TYPE: SHORT TITLE
+
+DESCRIPTION OF EXPECTED IMPACT FOR END USER. DESCRIPTION OF THE CHANGES MADE.
+
+[TICKET NUMBER]
+```
+
+- `CHANGE TYPE` is one of `feat`, `chore`, or `fix`
+- `TICKET NUMBER` is in the format `AP-XXXX` — usually found in the branch name
