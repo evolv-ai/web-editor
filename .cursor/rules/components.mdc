@@ -1,0 +1,28 @@
+---
+description: React component patterns for web-editor
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# Components
+
+- Use function components with hooks instead of class components.
+- Use the `FC` type rather than `FunctionComponent`.
+- Wrap all components with `observer()` from `mobx-react`.
+- Use named exports for components, not default exports.
+- Use a named function for the component; the function name should match the component name:
+  ```tsx
+  const Cmpt: FC<Props> = observer(function Cmpt(props: Props) {
+    return <div />;
+  });
+  ```
+- Never use barrel files (`index.ts` re-exports). Always use direct imports to the specific file.
+
+## Base Practices
+- For components exceeding 150 lines, extract sub-components into separate files.
+- Remove props that can be derived from other props.
+
+## Styling
+- Prefer `makeStyles()` over inline styles or `sx` props.
+- Always include a `name` option in `makeStyles` matching the component name.
+- Keep styles in the same file as the component.

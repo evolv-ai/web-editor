@@ -1,0 +1,27 @@
+---
+description: TypeScript/Node.js coding standards for web-editor
+alwaysApply: true
+---
+
+# Web Editor — General Standards
+
+## Language & Style
+- Use **TypeScript** throughout. No plain `.js` files in source.
+- Follow **AirBnB ESLint** rules for all TypeScript and JavaScript.
+- Always remove unused imports.
+- Be as focused and concise as possible — check existing files before creating new ones.
+
+## Project Context
+- This is the Evolv visual editor, hosted inside the Aetherial Docker desktop environment.
+- It communicates with Aetherial via **AWS SQS** — the command queue receives actions (e.g. `create_metamodel`) and the response queue returns results.
+- SQS message schema changes must be coordinated with the `aetherial` repo.
+
+## Build & Dev
+- Package manager: **npm** (npm workspaces).
+- Build workspace dependencies before starting: `npm run build:deps`
+- Start the dev server: `npm start`
+- Always run `npm run type-check` and `npm run lint` before committing.
+
+## Error Handling
+- Never fail silently. Missing required env vars or config must throw at startup.
+- Log errors with sufficient structured context to debug issues without a debugger.

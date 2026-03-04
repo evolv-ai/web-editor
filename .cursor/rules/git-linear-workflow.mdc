@@ -1,0 +1,27 @@
+---
+description: Git hygiene and Linear workflow standards for web-editor
+alwaysApply: true
+---
+
+# Git Hygiene
+
+## Branch Naming
+- Prefer `feature/AP-123-short-slug`, `fix/AP-123-short-slug`, or `chore/AP-123-short-slug` when working from a Linear ticket.
+- Always include the Linear issue key in the branch name when one exists.
+
+## Pull Requests
+- Include the Linear issue key in the PR title.
+- Link the issue in the PR description.
+- Keep PRs focused to one concern.
+- Ensure `npm run type-check` and `npm run lint` pass before requesting review.
+- Always use `GH_PAGER=cat` for `gh` commands.
+
+# Linear Workflow
+
+## Before Starting Work
+1. Search for an existing Linear issue first.
+2. Assign to yourself and move to `In Progress` before writing code.
+3. Ensure acceptance criteria are explicit checklist items.
+
+# Linear Access
+- Use the `linear` CLI for Linear operations instead of Linear MCP tools.
